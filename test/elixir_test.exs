@@ -1,7 +1,10 @@
 defmodule Tests do
   use ExUnit.Case
 
-  test "example" do
-    assert true
+  test "test_case" do
+    out = String.trim(ReservationTransformer.transform("input.txt"))
+    expected_out = String.trim(File.read!("expected_output.txt"))
+
+    assert out == expected_out
   end
 end
