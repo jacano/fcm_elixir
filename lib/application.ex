@@ -1,7 +1,7 @@
 defmodule App do
 
   def start(_type, _args) do
-    transformReservation("input.txt")
+    #transformReservation("input.txt")
     {:ok, self()}
   end
 
