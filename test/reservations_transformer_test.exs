@@ -1,4 +1,4 @@
-defmodule Tests do
+defmodule ReservationTransformerTests do
   use ExUnit.Case
 
   test "test_case" do

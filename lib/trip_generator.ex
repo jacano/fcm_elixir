@@ -1,4 +1,6 @@
 defmodule TripGenerator do
+
+  # Checks if the end time of the first segment (segment1) is within 24 hours before the start time of the second segment (segment2)
   defp is_connection(%TravelSegment{} = segment1, %TravelSegment{} = segment2) do
     diff = DateTime.diff(segment2.start_datetime, segment1.end_datetime, :hour)
     diff >= 0 && diff < 24

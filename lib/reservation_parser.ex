@@ -1,16 +1,5 @@
 defmodule ReservationParser do
 
-  def build_datetime(date, time) do
-    date_iso8601 = "#{date}T#{time}:00Z"
-    {:ok, datetime, _} = DateTime.from_iso8601(date_iso8601)
-    datetime
-  end
-
-  def build_date(date) do
-    {:ok, date} = Date.from_iso8601(date)
-    date
-  end
-
   def valid_line(line) do
     String.starts_with?(line, "SEGMENT") || String.starts_with?(line, "BASED")
   end
@@ -26,6 +15,18 @@ defmodule ReservationParser do
     end
   end
 
+  defp build_datetime(date, time) do
+    date_iso8601 = "#{date}T#{time}:00Z"
+    {:ok, datetime, _} = DateTime.from_iso8601(date_iso8601)
+    datetime
+  end
+
+  defp build_date(date) do
+    {:ok, date} = Date.from_iso8601(date)
+    date
+  end
+
+  #Pattern matching to parse input file. How cool is that!? :D
   defp parse_segment("Flight", [origin, start_date, start_time, _, destination, end_time]) do
     %TravelSegment{
       type: "Flight",
@@ -34,7 +35,7 @@ defmodule ReservationParser do
       start_date: start_date,
       start_time: start_time,
       end_time: end_time,
-      start_datetime: build_datetime(start_date, start_time),
+      start_datetime: build_datetime(start_date, start_time), #To simplify datetime comparison for sorting purposes.
       end_datetime: build_datetime(start_date, end_time),
     }
   end

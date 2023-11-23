@@ -16,6 +16,9 @@ defmodule SegmentGrouper do
     item.location == based
   end
 
+  # This function organizes the provide segment list into subgroups by using opening and closing function to detect segment beginning or ending in the provided based parameter.
+  # It recursively processes the list using tail recursion, forming subgroups by opening and closing them until the list is exhausted.
+  # It returns the grouped segments as a result. It will retain the segment input order.
   def group_segments(list, based) do
     group_segments(list, [], [], based)
   end

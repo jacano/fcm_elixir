@@ -3,18 +3,19 @@ defmodule Test.MixProject do
 
   def project do
     [
-      app: :test,
+      app: :fcm_challenge,
       version: "0.1.0",
       elixir: "~> 1.15",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      escript: [main_module: App]
     ]
   end
 
   def application do
     [
       extra_applications: [:logger],
-      mod: {Lib.Application, []}
+      mod: {App, []}
     ]
   end
 
