@@ -25,7 +25,9 @@ defmodule ReservationTransformer do
         Enum.filter(sublist, &TripGenerator.only_travels_not_based(&1, based))
       end)
       |> Enum.map(&TripGenerator.remove_connections/1)
-      |> Enum.map(fn sublist -> Enum.map(sublist, fn %TravelSegment{} = a -> a.destination end) end)
+      |> Enum.map(fn sublist ->
+        Enum.map(sublist, fn %TravelSegment{} = a -> a.destination end)
+      end)
 
     # Accomodate to required output format.
     t1 = trip_summary |> Enum.map(&TripFormatter.print_trip/1)

@@ -16,8 +16,10 @@ defmodule TripGenerator do
   def remove_connections(list) do
     Enum.reject(
       Enum.with_index(list),
-      fn {elem, index} -> index < length(list) - 1 && is_connection(elem, Enum.at(list, index + 1)) end)
+      fn {elem, index} ->
+        index < length(list) - 1 && is_connection(elem, Enum.at(list, index + 1))
+      end
+    )
     |> Enum.map(fn {elem, _index} -> elem end)
   end
-
 end
