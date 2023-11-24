@@ -2,29 +2,6 @@ defmodule SegmentGrouperTests do
   use ExUnit.Case
 
   test "ensure_it_groups" do
-    groups =
-      SegmentGrouper.generate_sublists(
-        [
-          %TravelSegment{
-            origin: "MAD",
-            destination: "BCN"
-          },
-          %TravelSegment{
-            origin: "BCN",
-            destination: "TFS"
-          },
-          %TravelSegment{
-            origin: "BCN",
-            destination: "TFS"
-          },
-          %TravelSegment{
-            origin: "TFS",
-            destination: "GGG"
-          }
-        ],
-        [1]
-      )
-
     expected_groups = [
       [
         %TravelSegment{
@@ -72,6 +49,29 @@ defmodule SegmentGrouperTests do
       ]
     ]
 
-    assert groups == expected_groups
+    groups =
+      SegmentGrouper.generate_sublists(
+        [
+          %TravelSegment{
+            origin: "MAD",
+            destination: "BCN"
+          },
+          %TravelSegment{
+            origin: "BCN",
+            destination: "TFS"
+          },
+          %TravelSegment{
+            origin: "BCN",
+            destination: "TFS"
+          },
+          %TravelSegment{
+            origin: "TFS",
+            destination: "GGG"
+          }
+        ],
+        [1]
+      )
+
+    assert expected_groups == groups
   end
 end
