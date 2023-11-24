@@ -40,7 +40,7 @@ Make sure you have Erlang and Elixir installed. Clone the repository and navigat
         - Formats trip summaries and segments into a final output string for display.
 
 ## Testing
-´test´ directory holds the test suite with input files and expected output and unit tests for modules.
+`test/` directory holds the test suite with input files and expected output along with unit tests for modules.
 
 ## Dependencies
 - Erlang 24 (Ensure binaries are included in the `Path` environment variable)

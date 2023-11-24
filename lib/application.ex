@@ -8,7 +8,7 @@ defmodule App do
     args |> parse_args |> process
   end
 
-  def transformReservation(input_path) do
+  defp transformReservation(input_path) do
     out = ReservationTransformer.transform(input_path)
     IO.puts(out)
   end
