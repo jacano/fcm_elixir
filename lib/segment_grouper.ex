@@ -1,5 +1,4 @@
 defmodule SegmentGrouper do
-
   defp is_connected(%TravelSegment{} = item, %TravelSegment{} = prev_item, based) do
     prev_item.destination == item.origin && item.origin != based
   end
@@ -20,7 +19,7 @@ defmodule SegmentGrouper do
   end
 
   defp generate_sublists([item | rest], [prev_item | _] = current_sublist, acc, based) do
-    if is_connected(item,  prev_item, based) do
+    if is_connected(item, prev_item, based) do
       generate_sublists(rest, [item | current_sublist], acc, based)
     else
       generate_sublists(rest, [item], acc ++ [Enum.reverse(current_sublist)], based)

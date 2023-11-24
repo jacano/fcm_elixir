@@ -1,5 +1,4 @@
 defmodule ReservationParser do
-
   def valid_line(line) do
     String.starts_with?(line, "SEGMENT") || String.starts_with?(line, "BASED")
   end
@@ -10,6 +9,7 @@ defmodule ReservationParser do
     case words do
       ["SEGMENT:", type | details] ->
         parse_segment(type, details)
+
       ["BASED:", details] ->
         details
     end
@@ -26,7 +26,7 @@ defmodule ReservationParser do
     date
   end
 
-  #Pattern matching to parse input file. How cool is that!? :D
+  # Pattern matching to parse input file. How cool is that!? :D
   defp parse_segment("Flight", [origin, start_date, start_time, _, destination, end_time]) do
     %TravelSegment{
       type: "Flight",
@@ -35,8 +35,9 @@ defmodule ReservationParser do
       start_date: start_date,
       start_time: start_time,
       end_time: end_time,
-      start_datetime: build_datetime(start_date, start_time), #To simplify datetime comparison for sorting purposes.
-      end_datetime: build_datetime(start_date, end_time),
+      # To simplify datetime comparison for sorting purposes.
+      start_datetime: build_datetime(start_date, start_time),
+      end_datetime: build_datetime(start_date, end_time)
     }
   end
 
@@ -49,7 +50,7 @@ defmodule ReservationParser do
       start_time: start_time,
       end_time: end_time,
       start_datetime: build_datetime(start_date, start_time),
-      end_datetime: build_datetime(start_date, end_time),
+      end_datetime: build_datetime(start_date, end_time)
     }
   end
 

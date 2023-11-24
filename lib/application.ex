@@ -1,7 +1,6 @@
 defmodule App do
-
   def start(_type, _args) do
-    #transformReservation("input.txt")
+    # transformReservation("input.txt")
     {:ok, self()}
   end
 
@@ -15,9 +14,11 @@ defmodule App do
   end
 
   defp parse_args(args) do
-    {options, _, _} = OptionParser.parse(args,
-      switches: [input: :string]
-    )
+    {options, _, _} =
+      OptionParser.parse(args,
+        switches: [input: :string]
+      )
+
     options
   end
 

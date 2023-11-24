@@ -1,5 +1,5 @@
 # Reservation Transformer (FCM Technical challenge)
-This Elixir app processes reservation data from an input file using set rules and shows the transformed data on the console. For complete details, refer to the challenge description [here](https://github.com/fcm-digital/elixir_technical_challenge/blob/master/README.md).
+This Elixir app processes reservation data from an input file and shows the transformed data on the console. For complete details, refer to the challenge description [here](https://github.com/fcm-digital/elixir_technical_challenge/blob/master/README.md).
 
 ## Getting Started
 
@@ -21,11 +21,6 @@ Make sure you have Erlang and Elixir installed. Clone the repository and navigat
      ./fcm_challenge --input <input_file_path>
      ```
 
-## Input/Output
-
-The input is a text file with reservation data. 
-Upon running the app, the transformed reservation information will be displayed on the console. It processes data based on rules defined within the `ReservationTransformer` module.
-
 ## Code Structure
 
 - `Test.MixProject` Module:
@@ -43,6 +38,9 @@ Upon running the app, the transformed reservation information will be displayed 
 
     4. **Formatting and Output:**
         - Formats trip summaries and segments into a final output string for display.
+
+## Testing
+´test´ directory holds the test suite with input files and expected output and unit tests for modules.
 
 ## Dependencies
 - Erlang 24 (Ensure binaries are included in the `Path` environment variable)

@@ -3,6 +3,7 @@ defmodule TripFormatter do
     case segment do
       %TravelSegment{} ->
         "#{segment.type} from #{segment.origin} to #{segment.destination} at #{segment.start_date} #{segment.start_time} to #{segment.end_time}\n"
+
       %HotelSegment{} ->
         "Hotel at #{segment.location} on #{segment.checkin_date} to #{segment.checkout_date}\n"
     end
