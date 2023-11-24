@@ -14,4 +14,11 @@ defmodule ReservationTransformerTests do
 
     assert out == expected_out
   end
+
+  test "trips_without_return_to_based" do
+    out = String.trim(ReservationTransformer.transform("test_cases/trips_without_return_to_based/input.txt"))
+    expected_out = String.trim(File.read!("test_cases/trips_without_return_to_based/expected_output.txt"))
+
+    assert out == expected_out
+  end
 end

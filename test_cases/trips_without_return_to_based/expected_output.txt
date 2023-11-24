@@ -1,0 +1,8 @@
+TRIP to ALC, TFS
+Flight from SVQ to ALC at 2023-02-15 09:30 to 11:00
+Flight from ALC to TFS at 2023-02-17 17:00 to 19:30
+
+TRIP to MAD, BCN, TFS
+Train from SVQ to MAD at 2023-05-15 12:30 to 16:00
+Train from MAD to BCN at 2023-06-15 12:30 to 16:00
+Flight from BCN to TFS at 2023-06-17 17:00 to 19:30
