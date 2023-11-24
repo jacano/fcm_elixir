@@ -30,7 +30,7 @@ defmodule SegmentGrouper do
     generate_sublists(rest, [item], acc ++ [Enum.reverse(current_sublist)], based)
   end
 
-  defp generate_sublists([], current_sublist, acc, based) do
+  defp generate_sublists([], current_sublist, acc, _based) do
     acc ++ [Enum.reverse(current_sublist)]
   end
 end
