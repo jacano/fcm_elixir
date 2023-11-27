@@ -6,7 +6,7 @@ defmodule ReservationTransformerTests do
 
     out = String.trim(ReservationTransformer.transform("test_cases/example/input.txt"))
 
-    assert expected_out = out
+    assert expected_out == out
   end
 
   test "train_connection" do
@@ -14,7 +14,7 @@ defmodule ReservationTransformerTests do
 
     out = String.trim(ReservationTransformer.transform("test_cases/train_connection/input.txt"))
 
-    assert expected_out = out
+    assert expected_out == out
   end
 
   test "trips_without_return_to_based" do
@@ -26,6 +26,6 @@ defmodule ReservationTransformerTests do
         ReservationTransformer.transform("test_cases/trips_without_return_to_based/input.txt")
       )
 
-    assert expected_out = out
+    assert expected_out == out
   end
 end
